@@ -3,6 +3,7 @@
 /**
  * Enum listing all of the Minecraft blocks.
  * @author kakoijohn
+ * @author jspacco
  *
  */
 public enum BlockType {
@@ -84,7 +85,14 @@ public enum BlockType {
 	EMERALD_ORE,
     EMERALD_BLOCK,
     BLOCK_OF_COAL,
+    QUARTZ_BLOCK,
+    FLOWING_WATER,
+    STILL_WATER,
+    FLOWING_LAVA,
+    STILL_LAVA;
+    
 /*
+TODO These block types are not working yet in the browser
     OAK_SAPLING,
     SPRUCE_SAPLING,
     BIRCH_SAPLING,
@@ -263,7 +271,7 @@ public enum BlockType {
 	REDSTONE_BLOCK,
 	NETHER_QUARTZ_ORE,
 	HOPPER,
-	QUARTZ_BLOCK,
+
 	CHISELED_QUARTZ_BLOCK,
 	PILLAR_QUARTZ_BLOCK,
 	QUARTZ_STAIRS,
@@ -381,10 +389,6 @@ public enum BlockType {
 	STRUCTURE_BLOCK,
 	*/
 
-    FLOWING_WATER,
-    STILL_WATER,
-    FLOWING_LAVA,
-    STILL_LAVA;
     
     /**
      * Create a Python class that looks like an enum that we can plug 
