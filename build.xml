@@ -1,0 +1,20 @@
+<project name="photoshop-jr" default="starter-files">
+	<property name="dist" value="dist"/>
+	<property name="project.name" value="knoxcraft"/>
+	<property name="labfolder" value="${dist}/${project.name}"/>
+
+	<target name="starter-files">
+	    <mkdir dir="${labfolder}"/>
+	    <touch file="${labfolder}/package.bluej"/>
+	    <copy todir="${labfolder}">
+	        <fileset dir="src">
+	            <filename name="*.java"/>
+	        </fileset>
+	    </copy>
+		<copy todir="${labfolder}/photoshopJr" >  
+			<fileset dir="bin/photoshopJr" includes="*"/>  
+		</copy>
+		<zip destfile="${dist}/${project.name}.zip" update="true" basedir="${labfolder}"/>
+	</target>
+
+</project>
