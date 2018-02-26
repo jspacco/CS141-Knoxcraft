@@ -1,4 +1,4 @@
-<project name="photoshop-jr" default="starter-files">
+<project name="knoxcraft" default="starter-files">
 	<property name="dist" value="dist"/>
 	<property name="project.name" value="knoxcraft"/>
 	<property name="labfolder" value="${dist}/${project.name}"/>
@@ -11,9 +11,6 @@
 	            <filename name="*.java"/>
 	        </fileset>
 	    </copy>
-		<copy todir="${labfolder}/photoshopJr" >  
-			<fileset dir="bin/photoshopJr" includes="*"/>  
-		</copy>
 		<zip destfile="${dist}/${project.name}.zip" update="true" basedir="${labfolder}"/>
 	</target>
 
