@@ -59,13 +59,17 @@ public class BlockWriter
         return buf.toString();
     }
 
-    public static void writeLandscapeToFile(BlockType[][][] grid, String filename) throws IOException
+    public static void writeLandscapeToFile(BlockType[][][] grid, String filename)
     {
-        String json = toJson(grid);
-        PrintStream out = new PrintStream(new File(filename));
-        out.println(json);
-        out.flush();
-        out.close();
+        try {
+            String json = toJson(grid);
+            PrintStream out = new PrintStream(new File(filename));
+            out.println(json);
+            out.flush();
+            out.close();
+        } catch (IOException e){
+            throw new RuntimeException(e);
+        }
     }
 
 }
