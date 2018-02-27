@@ -1,6 +1,6 @@
 
 
-public class TestKnoxcraft
+public class SampleStructures
 {
     public static void drawSkyscraper() {
         BlockType[][][] grid = new BlockType[8][6][40];
@@ -14,9 +14,9 @@ public class TestKnoxcraft
                 }
             }
         }
-        BlockWriter.writeLandscapeToFile(grid, "test.json");
+        BlockWriter.writeLandscapeToFile(grid, "sky1.json");
     }
-    
+
     public static void drawSkyscraper2() {
         // this one has the floors hollowed out
         BlockType[][][] grid = new BlockType[8][6][40];
@@ -25,12 +25,15 @@ public class TestKnoxcraft
                 for (int z=0; z<grid[x].length; z++){
                     if (y % 4 == 0) {
                         grid[x][z][y] = BlockType.IRON_BLOCK;
+                    } else if ((x == 3 || x == 4) && z == 1){
+                        // replace the "doorway" area with air
+                        grid[x][z][y] = BlockType.AIR;
                     } else if ((x==1 || x==6) && (z>0 &&  z<5)) {
                         // System.out.println("x = "+x+", z= "+z+", y="+y);
                         grid[x][z][y] = BlockType.GLASS;
-                    } else if (x > 0 && x < 8 && z == 4){
-                        grid[x][z][y] = BlockType.GLASS;
-                    }
+                    } else if (x > 0 && x < 7 && (z == 4 || z == 1)){
+                        grid[x][z][y] = BlockType.SANDSTONE;
+                    } 
                 }
             }
         }
